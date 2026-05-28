@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        arr = ["Bắc", "Trung", "Nam", "Tây", "Đông"];//khai báo mảng có 5 phần tử
+        arr[1] = "Trung trung bộ";//thay đổi phần tử thứ 2 của mảng (ghi đè lên phần tử cũ)
+
+        console.log(arr);//in ra mảng sau khi đã thay đổi phần tử thứ 2
+        console.log('Độ dài của mảng: ' + arr.length);//in ra độ dài của mảng (số phần tử trong mảng)
+        console.log(arr.push("Tây Bắc", "Đông Bắc"));//thêm phần tử "Tây Bắc" và "Đông Bắc" vào cuối mảng và in ra độ dài mới của mảng sau khi thêm phần tử
+        arr.splice(2, 3, "Tây Nam", "Đông Nam", "Nam Trung Bộ");//xóa 3 phần tử bắt đầu từ vị trí thứ 2 và thêm vào đó 3 phần tử mới "Tây Nam", "Đông Nam", "Nam Trung Bộ"
+        console.log(arr);
+
+        arr1 = ["Hà Nội", "Đà Nẵng", "Hồ Chí Minh"];//khai báo mảng arr1 có 3 phần tử
+        arr2 = arr.concat(arr1);//tạo mảng arr2 bằng cách nối mảng arr và arr1
+        console.log(arr2);//in ra mảng arr2 sau khi đã nối arr và arr
+        arr2.pop();//xóa phần tử cuối cùng của mảng arr2 and trả về phần tử đã bị xóa
+        console.log(arr2);//in ra mảng arr2 sau khi đã xóa phần tử cuối cùng
+        arr2.splice(0, 2);//xóa 2 phần tử bắt đầu từ vị trí thứ 0 của mảng arr2
+        console.log(arr2);//in ra mảng arr2 sau khi đã xóa 2 phần tử đầu tiên
+        console.log(arr2.indexOf("Hồ Chí Minh"));//tìm vị trí của phần tử "Hồ Chí Minh" trong mảng arr2 và trả về chỉ số của phần tử đó (nếu không tìm thấy sẽ trả về -1)
+        arr2.push("Đông Nam");//thêm phần tử "Đông Nam" vào cuối mảng arr2
+        console.log(arr2);//in ra mảng arr2 sau khi đã thêm phần tử "Đông Nam"
+        console.log(arr2.lastIndexOf("Đông Nam"));//tìm vị trí cuối cùng của phần tử "Đông Nam" trong mảng arr2 và trả về chỉ số của phần tử đó (nếu không tìm thấy sẽ trả về -1)
+        arr2.unshift("Hà Nội");//thêm phần tử "Hà Nội" vào đầu mảng arr2
+        console.log(arr2);//in ra mảng arr2 sau khi đã thêm phần tử "Hà Nội" vào đầu mảng
+
+        let arr3 = "helo world".split(" ");//tạo mảng arr3 bằng cách tách chuỗi "hello world" thành các phần tử dựa trên dấu cách
+        console.log(arr3);
+
+        let result = Math.sqrt(64);//tính căn bậc hai của 64 và lưu kết quả vào biến result
+        console.log(result);//in ra kết quả của phép tính căn bậc hai của 64
+
+        let result1 = Math.pow(5, 3);//tính 5 mũ 3 (5^3) và lưu kết quả vào biến result1
+        console.log(result1);
+
+        var x = 5.567;
+        console.log(Math.round(x, 1));//làm tròn số x lên hoặc xuống tùy thuộc vào phần thập phân của x và in ra kết quả sau khi đã làm tròn
+        var y = 5.345;
+        console.log(Math.ceil(y, 1));//làm tròn số y lên đến số nguyên gần nhất và in ra kết quả sau khi đã làm tròn
+        var z = 5.723;
+        console.log(Math.floor(z, 1));//làm tròn số z xuống đến số nguyên gần nhất và in ra kết quả sau khi đã làm tròn
+        var n = 5.879;
+        console.log(Math.trunc(n, 1));//cắt bỏ phần thập phân của số n và in ra phần nguyên của n sau khi đã cắt bỏ phần thập phân
+
+
+    </script>
+</body>
+
+</html>

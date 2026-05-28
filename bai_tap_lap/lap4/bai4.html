@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="moCuaSoMoi()">Mở cửa sổ mới</button>
+    <button onclick="dongCuaSoMoi()">Đóng cửa sổ mới</button>
+    <button onclick="kiemTra()">Kiểm tra cửa sổ đã đóng chưa</button>
+
+    <script>
+        let cuaSoMoi;
+        function moCuaSoMoi() {
+           let isIE = navigator.userAgent.indexOf("MSIE") != -1||navigator.userAgent.indexOf("Trident") != -1;
+           console.log(navigator.userAgent);
+
+           let width = isIE ? 100:150;
+           let height = isIE ? 100:150;
+            cuaSoMoi = window.open("", "cuaSoMoi", "width="+width+", height="+height,"toolbar =yes,menubar=yes");
+        }
+        function dongCuaSoMoi() {
+            if (cuaSoMoi && !cuaSoMoi.closed) {//Nếu cửa sổ đã tồn tại VÀ cửa sổ chưa đóng
+                cuaSoMoi.close();
+            }
+        }
+        function kiemTra() {
+            if (!cuaSoMoi||cuaSoMoi.closed) {
+                alert('Cửa sổ đã đóng');
+            } else {
+                alert('Cửa số chưa đóng');
+            }
+        }
+    </script>
+</body>
+</html>

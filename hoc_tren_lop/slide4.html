@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // let table = {
+        //   color: "red",
+        //   width: 100,
+        //   height: 50,
+        //   material: "wood"
+
+        // };
+
+        // table.color ="yellow";
+        // table.height = 100;
+        // table.material = "plastic";
+        // table.width = 200;
+        
+        // console.log(table);
+        // document.write("Bàn màu: "+table.color + "<br>");
+        // document.write("Chiều cao: "+table.height + "<br>");
+        // document.write("Chất liệu: "+table.material + "<br>");
+        // document.write("Chiều rộng:"+table.width + "<br>");
+
+
+        // let dog={
+        //     name: "Buddy",
+        //     age: 5,
+        //     breed: "Golden Retriever",
+        //     weight: 10,
+        //     sua: function(){
+        //         return "Gâu Gâu"
+        //     }
+        // };
+
+        // dog.sua();
+        // console.log(dog.sua());
+        
+
+
+        function sinhVien(ten,tuoi,chuyenNganh,maSv) {
+            this.ten = ten;
+            this.tuoi = tuoi;
+            this.chuyenNganh = chuyenNganh;
+            this.maSv = maSv;
+        }
+
+        // let student = new sinhVien("Huy", 20, "CNTT", "ph12345");
+        // let student2 = new sinhVien("Nam", 21, "UDPM", "ph12346");
+        // let student3 = new sinhVien("Thanh", 22, "MKT", "ph12347");
+        // let student4 = new sinhVien("Thanh", 23, "TKDH", "ph12348");
+        // let student5 = new sinhVien("Thanh", 24, "PTPM", "ph12349");
+        // document.write("Tên Sinh viên: " + student.ten  + "Tuổi: " + student.tuoi + "Chuyên Ngành: " + student.chuyenNganh  + "Ma sinh vien: " + student.maSv + "<br>");
+        // document.write("Ten Sinh vien: " + student2.ten  + "Tuổi: " + student2.tuoi + "Chuyên Ngành: " + student2.chuyenNganh  + "Ma sinh vien: " + student2.maSv + "<br>");
+        // document.write("Ten Sinh vien: " + student3.ten  + "Tuổi: " + student3.tuoi + "Chuyên Ngành: " + student3.chuyenNganh  + "Ma sinh vien: " + student3.maSv + "<br>");
+        // document.write("Ten Sinh vien: " + student4.ten  + "Tuổi: " + student4.tuoi + "Chuyên Ngành: " + student4.chuyenNganh  + "Ma sinh vien: " + student4.maSv + "<br>");
+        // document.write("Ten Sinh vien: " + student5.ten  + "Tuổi: " + student5.tuoi + "Chuyên Ngành: " + student5.chuyenNganh  + "Ma sinh vien: " + student5.maSv + "<br>");
+
+        sinhVien[0] = new sinhVien("Huy", 20, "CNTT", "ph12345");
+        sinhVien[1] = new sinhVien("Nam", 21, "UDPM", "ph12346");
+        sinhVien[2] = new sinhVien("Thanh", 22, "MKT", "ph12347");
+        sinhVien[3] = new sinhVien("Thanh", 23, "TKDH", "ph12348");
+        sinhVien[4] = new sinhVien("Thanh", 24, "PTPM", "ph12349");
+
+        // for(var i = 0; i < sinhVien.length; i++){
+        //     document.write("Tên Sinh Viên: " +" "+ student[i].ten  +", "+ "Tuổi: " + student[i].tuoi +", "+"Chuyên Ngành: " + student[i].chuyenNganh  +", "+ "Mã Sinh Viên: " + student[i].maSv + "<br>");
+        // }
+        for(let x in sinhVien){
+            document.write("Tên Sinh viên: " + sinhVien[x].ten  + "Tuổi: " + sinhVien[x].tuoi + "Chuyên Ngành: " + sinhVien[x].chuyenNganh  + "Mã sinh viên: " + sinhVien[x].maSv + "<br>");
+        }
+        
+        alert(window.innerWidth);
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="hoTen">
+    <input type="number" min="0" max="10" id="diem1">
+    <input type="number" min="0" max="10" id="diem2">
+    <input type="number" min="0" max="10" id="diem3">
+    <button onclick="tinhDiemTrungBinh()">Tinh Diem Trung Binh</button>
+
+    <button onclick="moCuaSo()"> Mở cửa sổ mới </button>
+    <button onclick="batDau()">click</button>
+    <script>
+        function sv(hoTen,diem1,diem2,diem3){
+            this.hoTen = hoTen;
+            this.diem1 = diem1;
+            this.diem2 = diem2;
+            this.diem3 = diem3;
+            this.diemTrungBinh = function(){
+                return (this.diem1 + this.diem2 + this.diem3)/3;
+            }
+        }
+
+        function tinhDiemTrungBinh(){
+            let ten =document.getElementById("hoTen").value ;
+            
+            let diem1 = Number(document.getElementById("diem1").value);
+            let diem2 = Number(document.getElementById("diem2").value);
+            let diem3 = Number(document.getElementById("diem3").value);
+            let diemTrungBinh = new sv(ten,diem1,diem2,diem3).diemTrungBinh();
+            if(diemTrungBinh >= 5){
+                alert("Chúc mừng bạn đã đậu");
+            }else{
+                alert("Chúc mừng bạn đã rớt");
+            }
+           
+        }
+
+        function moCuaSo(){
+            window.open("https://vnexpress.net/","tim kiếm", "width=600, height=800");
+        }
+
+        // var t = setTimeout(function(){
+        //     alert("Xin chào");// thực hiện 1 lần
+        // }, 1000);
+
+        // var t = setInterval(function(){
+        //     alert("Xin chào");// thực hiện nhiều lần
+        // }, 1000);
+
+        function batDau(){
+            var t = setInterval(function(){
+                alert("Xin chào");// thực hiện nhiều lần
+            }, 1000);
+        }
+    </script>
+    
+</body>
+</html>

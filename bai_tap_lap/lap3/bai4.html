@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getValue(value) {
+            let computer = Math.floor(Math.random() * 3);
+            console.log("Computer chọn: " + computer);
+            let result = "";
+            if (value === computer) {
+                result = "Hòa";
+            } else if ((value === 0 && computer === 2) || (value === 1 && computer === 0) || (value === 2 && computer === 1)) {
+                result = "Bạn thắng";
+            } else {
+                result = "Bạn thua";
+            }
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+    <input type = "button" value ="Rock" onclick="getValue(0)";>
+    <input type = "button" value ="Paper" onclick="getValue(1)";>
+    <input type = "button" value ="Scissors" onclick="getValue(2)";>    
+</body>
+</html>

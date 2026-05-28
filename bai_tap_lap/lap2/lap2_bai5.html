@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 10 + Math.round(Math.random() * 5);
+        var a;
+        while (a != x) {
+            a = prompt('Nhấp số ngẫu nhiên từ 10 đến 15');
+            if (isNaN(a)) {
+                alert('Vui lòng nhập một số hợp lệ');
+            } else if (a < 10 || a > 15) {
+                alert('Vui lòng nhập một số trong khoảng từ 10 đến 15');
+            } else if (a < x) {
+                alert('Rất tiếc bạn đã đoán sai ');
+            } else if (a > x) {
+                alert('Rất tiếc bạn đã đoán sai ');
+            } else {
+                alert('Chúc mừng bạn đã đoán đúng số ngẫu nhiên là: ' + x);
+            }
+        }
+        document.write('Chúc mừng bạn đã đoán đúng số ngẫu nhiên là: ' + x);
+    </script>
+</body>
+</html>

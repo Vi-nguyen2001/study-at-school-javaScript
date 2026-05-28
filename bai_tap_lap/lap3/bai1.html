@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lap_3_bai1</title>
+</head>
+<body>
+    <script>
+        var a = prompt("Nhập số a:");
+        var b = prompt("Nhập số b:");
+        var c = prompt("Nhập toán tử (+, -, *, /):");
+
+        switch (c) {
+            case "+":
+               var result = a + b;
+               alert("Kết quả: " + result.toFixed(2));
+                break;
+            case "-":
+                var result = a - b;
+                alert("Kết quả: " + result.toFixed(2));
+                break;
+            case "*":
+                var result = a * b;
+                alert("Kết quả: " + result.toFixed(2));
+                break;
+            case "/":
+                var result = a / b;
+                
+                alert("Kết quả: " + result.toFixed(2));
+                break;
+            default:
+                alert("Toán tử không hợp lệ. Vui lòng nhập một trong các toán tử: +, -, *, /");
+                break;
+        }
+
+
+    </script>
+    
+</body>
+</html>

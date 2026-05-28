@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var canNang = prompt('Nhập cân nặng của bạn (kg)');
+        var chieuCao = prompt('Nhập chiều cao của bạn (m)');
+        var bmi = canNang / Math.pow(chieuCao, 2);
+        if(bmi<18.5){
+            alert('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' - Bạn đang thiếu cân');
+            document.write('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' - Bạn đang thiếu cân');
+        }else if(bmi>=18.5 && bmi<24.9){
+            alert('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' - bình thường');
+            document.write('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' -  bình thường');
+        }else if(bmi>=25 && bmi<29.9){
+            alert('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' - Bạn đang thừa cân');
+            document.write('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' - Bạn đang thừa cân');
+        }else{
+            alert('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' - Bạn đang béo phì');
+            document.write('Chỉ số BMI của bạn là: ' + bmi.toFixed(2) + ' - Bạn đang béo phì');
+        }
+
+    </script>
+</body>
+</html>

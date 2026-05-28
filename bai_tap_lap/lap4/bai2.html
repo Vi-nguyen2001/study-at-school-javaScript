@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nhập thông tin sinh viên:<br>
+    Nhập tên sinh viên :
+    <input type="text" id="ten"><br />
+    Nhập điểm :
+    <input type="text" id="diem"><br />
+    <button onclick="hienThi()">Hiển Thị</button>
+    <div id="ketQua"></div>
+    <script>
+
+        function hienThi() {
+            function sinhvien(ten, diem, hocLuc) {
+                this.ten = ten;
+                this.diem = diem;
+                this.hocLuc = hocLuc;
+            }
+            let ten = document.getElementById("ten").value;
+            let diem = document.getElementById("diem").value;
+            let hocluc = "";
+            if (ten == "" || diem == "") {
+                document.write("vui lòng nhập đầy đủ thông tin");
+                return;
+            }
+            diem = Number(diem);
+            if (diem >= 5 && diem <= 10) {
+                hocluc = "đậu";
+            } else if (diem >= 0 && diem < 5) {
+                hocluc = "rớt";
+            } else {
+                hocluc = "Không hợp lệ";
+            }
+            let sv = new sinhvien(ten, diem, hocluc);
+            document.write("Tên sinh viên: " + sv.ten + "<br>");
+            document.write("Điểm: " + sv.diem + "<br>");
+            document.write("Học lực: " + sv.hocLuc + "<br>");
+        }
+    </script>
+</body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // let dtb = 4;
+        // dtb >=5 ? alert("Đậu") : alert("Rớt");
+
+        //var diem = prompt("Nhập điểm của bạn (0-10):");
+        // switch (diem) {
+        //     case "0":
+        //     case "1":
+        //     case "2":
+        //     case "3":
+        //     case "4":
+        //         alert("Điểm dưới trung bình");
+        //         break;
+        //     case "5":
+        //     case "6":
+        //     case "7":
+        //         alert("Điểm trung bình");
+        //         break;
+        //     case "8":
+        //     case "9":
+        //     case "10":
+        //         alert("Điểm Giỏi");
+        //         break;
+        //     default:
+        //         alert("Điểm không hợp lệ. Vui lòng nhập điểm từ 0 đến 10.");
+        // }
+
+        // switch (true) {
+        //     case (diem >= 1 && diem <=4):
+        //         alert("Điểm dưới trung bình");
+        //         break;
+        //     case (diem >= 5 && diem <=7):
+        //         alert("Điểm trung bình");
+        //         break;
+        //     case (diem >= 8 && diem <=10):
+        //         alert("Điểm Giỏi");
+        //         break;
+        //     default:
+        //         alert("Điểm không hợp lệ. Vui lòng nhập điểm từ 0 đến 10.");
+        //         break;
+        // }
+
+
+        // var x = 1;
+        // document.write('Các số lẻ từ 1 đến 10: ');
+        // while (x <= 10) {
+        //     if (x % 2 != 0) {
+        //         document.write(x + " ");
+        //         console.log(x);
+        //     }
+        //     x++;
+        // }
+
+        // for(x; x <= 10; x++){
+        //     if (x % 2 != 0) {
+        //         document.write(x + " ");
+        //         console.log(x);
+        //     }
+        // }
+
+
+        // var arr = ['Sỹ','Công','Nông','Thương','Binh'];
+        // for(var arrs of arr){
+        //     document.write(arrs + " ");
+        //     console.log(arrs);
+        // }
+
+
+        //Tạo hàm 
+
+        // function name() {
+        //     let you = prompt("Nhập tên của bạn:");
+        //     alert("Xin chào " + you + "!");   
+        // }
+        // name();
+
+        // function xacNhan(traloi){
+        //     var ketqua ="";
+        //     if(traloi){
+        //         ketqua = "Tuyệt vời .Chúc bạn chiến thắng"
+        //     }else{
+        //         ketqua = "Hẹn gặp bạn nhé!"
+        //     }
+        //     return ketqua;
+        // }
+
+        // var traloi = confirm("Bạn có muốn chơi game không?");
+        // var thongbao = xacNhan(traloi);
+        // alert(thongbao);
+
+
+        function hienThi(anh) {
+            if (anh == "daubong") {
+                document.write("<img src='image/anh1.png' alt='Game'>");
+            } else if (anh == "daubanh") {
+                document.write("<img src='image/image.png' alt='Đá bóng'>");
+            }
+
+        }
+
+    </script>
+    <p> Bạn thích chơi:</p>
+    <button onclick="hienThi('daubong')">Game</button>
+    <button onclick="hienThi('daubanh')">Đá bóng</button>
+    
+</body>
+
+</html>

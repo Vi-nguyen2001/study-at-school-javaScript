@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab31</title>
+</head>
+<body>
+
+<script>
+
+   
+    let inventory = [];
+
+    
+    let item1 = {
+        name: "Samsung",
+        model: "S24",
+        cost: 20000,
+        quantity: 5
+    };
+
+    let item2 = {
+        name: "Dell",
+        model: "Inspiron",
+        cost: 15000,
+        quantity: 3
+    };
+
+    let item3 = {
+        name: "Sony",
+        model: "WH1000",
+        cost: 7000,
+        quantity: 10
+    };
+
+   
+    inventory.push(item1);
+    inventory.push(item2);
+    inventory.push(item3);
+
+    
+    console.log(inventory);
+
+    
+    console.log(inventory[2].quantity);
+
+    
+    let item4 ={
+        name: "iPhone",
+        model: "15 Pro",
+        cost: 30000,
+        quantity: 2
+    }
+    inventory.push(item4);
+
+    console.log(inventory[3].name);
+    console.log(inventory[3].model);
+    console.log(inventory[3].cost);
+    console.log(inventory[3].quantity);
+
+</script>
+
+</body>
+</html>

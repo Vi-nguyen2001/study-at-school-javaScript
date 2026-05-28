@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máy Tính Đơn Giản</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      .calculator {
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        gap: 5px;
+      }
+
+      .btn {
+        width: 80px;
+        height: 80px;
+        border: 1px solid #999;
+        background: white;
+        font-size: 28px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .btn:hover {
+        background: #e6e6e6;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="calculator">
+      <!-- <input type="text" id="display" readonly> -->
+
+      <button class="btn" onclick="nhapSo('7')">7</button>
+      <button class="btn" onclick="nhapSo('8')">8</button>
+      <button class="btn" onclick="nhapSo('9')">9</button>
+      <button class="btn" onclick="chonToanTu('+')">+</button>
+
+      <button class="btn" onclick="nhapSo('4')">4</button>
+      <button class="btn" onclick="nhapSo('5')">5</button>
+      <button class="btn" onclick="nhapSo('6')">6</button>
+      <button class="btn" onclick="chonToanTu('-')">-</button>
+
+      <button class="btn" onclick="nhapSo('1')">1</button>
+      <button class="btn" onclick="nhapSo('2')">2</button>
+      <button class="btn" onclick="nhapSo('3')">3</button>
+      <button class="btn" onclick="chonToanTu('*')">×</button>
+
+      <button class="btn" onclick="nhapSo('0')">0</button>
+      <button class="btn" onclick="xoaManHinh()">C</button>
+      <button class="btn" onclick="tinhKetQua()">=</button>
+      <button class="btn" onclick="chonToanTu('/')">÷</button>
+    </div>
+
+    <script>
+      let so1 = "";
+      let so2 = "";
+      let toanTu = "";
+
+      // Nhập số
+      function nhapSo(so) {
+        if (toanTu == "") {
+          so1 += so;
+        } else {
+          so2 += so;
+        }
+      }
+
+      // Chọn toán tử
+      function chonToanTu(tt) {
+        if (so1 == "") return;
+
+        toanTu = tt;
+      }
+
+      // Tính kết quả
+      function tinhKetQua() {
+        if (toanTu == "") {
+          alert("Kết quả: " + so1);
+          console.log("Kết quả: " + so1);
+          return;
+        }
+       
+
+        let ketQua;
+
+        let a = Number(so1);
+        let b = Number(so2);
+
+        switch (toanTu) {
+          case "+":
+            ketQua = a + b;
+            break;
+
+          case "-":
+            ketQua = a - b;
+            break;
+
+          case "*":
+            ketQua = a * b;
+            break;
+
+          case "/":
+            ketQua = a / b;
+            break;
+        }
+
+        // Gán lại để tính tiếp
+        so1 = ketQua;
+        so2 = "";
+        toanTu = "";
+        alert("Kết quả: " + ketQua);
+        console.log("Kết quả: " + ketQua);
+      }
+
+      // Xóa màn hình
+      function xoaManHinh() {
+        so1 = "";
+        so2 = "";
+        toanTu = "";
+      }
+    </script>
+  </body>
+</html>

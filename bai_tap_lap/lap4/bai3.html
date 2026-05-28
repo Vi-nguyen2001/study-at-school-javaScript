@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Time</h1>
+    </div>
+    <div id="time"></div>
+    <script>
+        startTime();
+        function startTime() {
+            var now = new Date();
+            var d = now.getDate();
+            var M = now.getMonth()+1;
+            var y = now.getFullYear();
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+            document.getElementById('time').innerHTML = d + "/" + M + "/" + y + " " + h + ":" + m + ":" + s;
+            setTimeout('startTime()', 1000);
+        }
+    </script>
+</body>
+
+</html>
