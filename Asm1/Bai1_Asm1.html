@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asm1</title>
+</head>
+<body>
+    <div>
+        Nhập họ tên
+    </div>
+    <input type="text" id="name">
+    <div>
+        Nhập năm sinh
+    </div>
+    <input type="text" id="year">
+    <button onclick="hienThi();">Tính tuổi</button>
+    <div id="result">
+    </div>
+
+    <script> 
+       
+        function hienThi(){
+            let name = document.getElementById("name").value;
+            let year = document.getElementById("year").value;
+            let yearNow = new Date().getFullYear();
+
+            if(name == ""|| year == ""){
+                alert("Vui lòng nhập đày đủ thống tin");
+                return;  
+            }
+            if(year > yearNow|| year <= 0){
+                alert("Năm sinh không hợp lệ");
+                return;
+            }
+            if(isNaN(year)){
+                alert("Năm sinh không hợp lệ");
+                return;
+            }
+            let age = yearNow - year;
+            document.getElementById("result").innerHTML = "Họ tên là: " + name + "</br>"+  "Tuổi là: " + age;
+           
+        }
+        
+        
+    </script>
+</body>
+</html>

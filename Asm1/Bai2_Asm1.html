@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+
+    <div>Danh sách sinh viên ban đầu:</div>
+    <div id="danhSachSV"></div>
+    <br>
+    <div>Thêm sinh viên:</div>
+    <input type="text" id="maSv" placeholder="Mã SV">
+    <input type="text" id="ten" placeholder="Tên">
+    <input type="text" id="email" placeholder="Email">
+    <button onclick="themSV()">Thêm</button>
+    <br><br>
+    <div>Danh sách sinh viên sau khi thêm:</div>
+    <div id="ketQua"></div>
+
+    <script>
+
+        function sinhVien(maSv, ten, email){
+            this.maSv = maSv;
+            this.ten = ten;
+            this.email = email;
+        }
+
+        let sv1 = new sinhVien("sv123","Bùi Thị Ánh Hồng","hongbta@gmail.com");
+        let sv2 = new sinhVien("sv345","Nguyễn Thị Mai","maint@gmail.com");
+
+        let danhSachSV = [sv1, sv2];
+
+        document.getElementById("danhSachSV").innerHTML = danhSachSV[0].maSv+"|"+danhSachSV[0].ten +"|"+ danhSachSV[0].email + "<br>" + danhSachSV[1].maSv+"|"+danhSachSV[1].ten +"|"+ danhSachSV[1].email;
+            
+
+        function themSV(){
+
+            let maSv = document.getElementById("maSv").value;
+            let ten = document.getElementById("ten").value;
+            let email = document.getElementById("email").value;
+
+            let sv = new sinhVien(maSv, ten, email);
+
+            danhSachSV.push(sv);
+            let output = "";
+            for(let i = 0; i < danhSachSV.length; i++){
+
+                output += danhSachSV[i].maSv+"|"+danhSachSV[i].ten +"|"+ danhSachSV[i].email + "<br>";
+            }
+
+            document.getElementById("ketQua").innerHTML = output;
+        }
+
+    </script>
+
+</body>
+</html>
