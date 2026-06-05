@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body onload="load()">
+    <img id ="anh" src="anh/dia-diem-chup-anh-dep-o-ha-noi-1.jpg" alt="">
+    <button onclick="prevAnh()">Prev</button>
+    <button onclick="nextAnh()">Next</button>
+    <button onclick="startSlide()">Start</button>
+    <button onclick="stopSlide()">Stop</button>
+    <script>
+        var arrAnh = new Array();
+        function load(){
+         for(let i =1; i<= 5 ; i++){
+            arrAnh[i] = new Image();//khai báo từng phần tử của mảng là ảnh
+            arrAnh[i].src = "anh/dia-diem-chup-anh-dep-o-ha-noi-" + i + ".jpg";
+            //console.log(arrAnh[i].src);
+         }  
+        }
+
+        var index = 1;
+        function nextAnh(){
+           if(index < 5){
+                index++;
+                document.getElementById("anh").src = arrAnh[index].src;
+           }else{
+                index = 1;
+                document.getElementById("anh").src = arrAnh[index].src;
+           }
+        }
+        function prevAnh(){
+            if(index > 1){
+                index--;
+                document.getElementById("anh").src = arrAnh[index].src;
+            }else{
+                index = 5;
+                document.getElementById("anh").src = arrAnh[index].src;
+            }
+           
+        }
+         //autoSlide = setInterval(nextAnh, 1000); ảnh tự động chạy thì cho ra ngoài function
+        function startSlide(){
+            autoSlide = setInterval(nextAnh, 1000);//lặp lại ảnh sau 1s 
+        }
+        function stopSlide(){
+            clearInterval(autoSlide);
+        }
+       
+        
+    </script>
+</body>
+</html>

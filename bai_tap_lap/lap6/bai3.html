@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img id = "anh" src="/image/Screenshot.png" alt="" onmouseover="hienThi()" onmouseout="anThi()">
+    <img id = "slideShow" src="/image/0.jpg" alt="">
+    <button onclick="prevAnh()">Prev</button>
+    <button onclick="nextAnh()">Next</button>
+    <button onclick="startSlide()">Start</button>
+    <button onclick="stopSlide()">Stop</button>
+    
+    <script>
+        function hienThi(){
+            var img = document.getElementById("anh");
+            img.src = "/image/Screenshot2.png";
+        }
+        function anThi(){
+            var img = document.getElementById("anh");
+            img.src = "/image/Screenshot.png";
+        }
+        
+
+        var imgArr = new Array();
+
+         for (var i = 0; i <= 5; i++) {
+            imgArr[i] = new Image();
+            imgArr[i].src = "/image/" + i + ".jpg";
+        }
+
+        var index =0;
+
+        function nextAnh(){
+            if(index < 5){
+                index++;
+                document.getElementById("slideShow").src = imgArr[index].src;
+            }else{
+                index = 0;
+                document.getElementById("slideShow").src = imgArr[index].src;
+            }
+        }
+
+        function prevAnh(){
+            if(index > 0){
+                index--;
+                document.getElementById("slideShow").src = imgArr[index].src;
+            }else{
+                index = 5;
+                document.getElementById("slideShow").src = imgArr[index].src;
+            }
+        }
+
+        function startSlide(){
+           auto= setInterval(nextAnh, 1000);
+        }
+
+        function stopSlide(){
+            clearInterval(auto);
+        }
+    </script>
+
+
+
+</body>
+
+</html>

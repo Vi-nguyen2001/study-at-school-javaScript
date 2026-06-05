@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+        <p>Xin chào</p>
+        <div id ="item">
+            <div class="item item1">Hoa Lan</div>
+            <div class="item item2">Hoa Huệ</div>
+            <div class="item item3">Hoa Đào</div>
+        </div>
+
+        <script>
+        //    document.write(document.getElementById("item").firstElementChild.innerHTML);
+        //    document.write(document.getElementById("item").childNodes[3].innerHTML);
+        //    document.write(document.getElementById("item").lastElementChild.innerHTML);
+           
+            document.getElementById("item").childNodes[3].style.color="red";
+            document.getElementById("item").firstElementChild.style.color="blue";
+            document.getElementsByTagName("p")[0].style.color="green";
+            document.getElementsByClassName("item1")[0].style.color="yellow";
+
+            var newElement = document.createElement("p");//tạo thẻ p
+            document.body.appendChild(newElement);//thêm thẻ với body
+            var text = document.createTextNode("Hello World");//tạo text
+            newElement.appendChild(text);//thêm text vào thẻ p
+           
+           
+
+        </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Danh mục hàng hóa</h1>
+        <table border="1">
+            <tr>
+                <td>iphone9</td>
+                <td>$1700</td>
+                <td><button onclick="them(this)">Thêm</button></td>
+            </tr>
+            <tr>
+                <td>xiaomi</td>
+                <td>$1800</td>
+                <td><button onclick="them(this)">Thêm</button></td>
+            </tr>
+            <tr>
+                <td>Sumsung galaxy s25</td>
+                <td>$1900</td>
+                <td><button onclick="them(this)">Thêm</button></td>
+            </tr>
+            <tr>
+                <td>huawei p50</td>
+                <td>$1700</td>
+                <td><button onclick="them(this)">Thêm</button></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h2>Giỏ hàng của bạn</h2>
+        <table border="1" id="cart">
+
+        </table>
+    </div>
+    <div>
+        <h2>Tổng tiền: </h2>
+        <span id="tong">0</span>
+    </div>
+
+    <script>
+        function them(Button){
+            var row = Button.parentElement.parentElement.cloneNode(true);
+            var btnXoa = row.getElementsByTagName("button")[0];
+            btnXoa.innerText = "Xóa";
+            btnXoa.setAttribute("onclick","xoa(this)");
+            document.getElementById("cart").appendChild(row);
+            tinhTong();
+        }
+
+        function xoa(Button){
+            var row = Button.parentElement.parentElement;
+            document.getElementById("cart").removeChild(row);
+            tinhTong();
+        }
+
+        function tinhTong(){
+            var cart = document.getElementById("cart");
+            var row = cart.getElementsByTagName("tr");
+            var tong =0;
+            for (var i = 0; i < row.length; i++) {
+                var cells = row[i].getElementsByTagName("td");//lấy các phần tử td trong row
+                var price = cells[1].innerText.substr(1);// lấy phần tử price trong row
+                tong += Number(price);
+                
+            }
+            document.getElementById("tong").innerText = tong;
+        }
+    </script>
+</body>
+
+</html>

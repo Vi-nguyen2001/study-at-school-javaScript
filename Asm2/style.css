@@ -1,0 +1,154 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: #d85691;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.section1{
+    width: 70%;
+    margin: 0 auto;
+}
+.section1 img{
+    width: auto;
+    height: 700px;
+}
+.btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #511bce;
+    border-radius: 0px;
+}
+.btn1{
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #3db33d;
+    color: #fff;
+}
+
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3db33d;
+    color: #fff;
+    padding: 10px;
+}
+
+.container{
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-filter{
+    margin: 20px;
+}
+
+.sales-table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.sales-table th, .sales-table td{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: left;
+    
+}
+
+.sales-table tfoot td{
+    text-align: left;
+    font-weight: bold;
+}
+
+.sales-table th{
+    background-color: #333;
+    color: #fff;
+}
+.section2{
+    padding-bottom: 20px;
+}
+
+.container2{
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+   
+}
+
+.row2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+fieldset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.row3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.btn1{
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #3db33d;
+    color: #fff;
+    
+    
+}
+
+.row5{
+    padding: 20px;
+    text-align: center;
+}
+
+
+

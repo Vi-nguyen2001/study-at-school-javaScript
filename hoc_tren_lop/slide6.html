@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+        #blook{
+            display: none;
+        }
+        div.active{
+            display: block ! important;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+     <Button id="hienthi">Make it Rainbow</Button>
+    <div id="blook">
+        <div id="red"></div>
+        <div id="orange"></div>
+        <div id="yellow"></div>
+        <div id="green"></div>
+        <div id="blue"></div>
+        <div id="indigo"></div>
+        <div id="violet"></div>
+       
+    </div>
+
+    <script>
+        document.getElementById("hienthi").setAttribute("onclick", "rainbowify()");
+        document.getElementById("red").classList.add("maudo");// thêm class maudo với id red
+        
+        function rainbowify() {
+            let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+            document.getElementById("blook").classList.toggle("active");
+          
+            for (const divs of colors) {
+                let div = document.getElementById(divs);
+                div.style.backgroundColor = divs;
+
+            }
+        }
+
+        // function rainbowify() {
+        //     let divs = document.getElementsByTagName("div");
+        //     for (const div of divs) {
+        //         div.style.backgroundColor = div.id;
+        //     }
+        // }
+
+        // function rainbowify(){
+        //     let divs = document.getElementsByTagName("div");
+        //     for (let i = 0; i < divs.length; i++) {
+        //         divs[i].style.backgroundColor = divs[i].id;
+        //     }
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>

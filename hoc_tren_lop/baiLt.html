@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Nội dung</label>
+    <input id="noidung" type="text">
+    <button id="them">Thêm</button>
+    <ul id="ketqua"></ul>
+    <script>
+       
+        document.getElementById('them').onclick = function () {
+          them();  
+        } 
+       
+         function them() {
+            var nd = '';
+            nd += "<li>" + document.getElementById("noidung").value + "<button class='xoa' onclick = 'xoa(this)'> Xóa </button></li>";
+            document.getElementById('ketqua').innerHTML += nd;
+            var arr = document.querySelectorAll('.xoa');
+            console.log(arr);
+             for (const el of arr) {
+                el.style.color = "red";
+            }
+        }
+       
+        function xoa(item) {
+            item.parentElement.style.display = "none";
+        }
+    </script>
+</body>
+</html>

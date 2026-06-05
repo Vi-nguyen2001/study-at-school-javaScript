@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            width: 100px;
+            height: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <table align="center">
+        <tr>
+            <td><button onclick="mark(0)"></button></td>
+            <td><button onclick="mark(1)"></button></td>
+            <td><button onclick="mark(2)"></button></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="mark(3)"></button></td>
+            <td><button onclick="mark(4)"></button></td>
+            <td><button onclick="mark(5)"></button></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="mark(6)"></button></td>
+            <td><button onclick="mark(7)"></button></td>
+            <td><button onclick="mark(8)"></button></td>
+        </tr>
+    </table>
+
+
+    <script>
+        var flag = true;
+        var count = 0;
+            function mark(index) {
+            var button = document.getElementsByTagName("button")[index];
+            button.innerText = flag ? "X" : "O";
+            button.style.backgroundColor = flag ? "aqua" : "yellow";
+            button.setAttribute("disabled", "true");
+
+            count++;
+            
+            if (checkWin()) {
+                alert((flag ? "X" : "O") + " Chiến thắng");
+                location.reload();
+                return;
+            }
+
+            if (count == 9) {
+                alert("Hoa");
+                location.reload();
+                return;
+            }
+
+            flag = !flag;
+        }
+
+        
+        function checkWin() {
+            var button = document.getElementsByTagName("button");
+            var winCase = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ]
+
+            for (var i = 0; i < winCase.length; i++) {
+                var a = winCase[i][0];
+                var b = winCase[i][1];
+                var c = winCase[i][2];
+
+                if (button[a].innerText !== "" &&
+                    button[a].innerText === button[b].innerText &&
+                    button[a].innerText === button[c].innerText){
+                    return true;
+                }
+            }
+
+            return false
+        }
+    </script>
+
+</body>
+
+</html>
