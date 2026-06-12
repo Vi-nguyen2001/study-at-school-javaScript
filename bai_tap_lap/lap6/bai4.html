@@ -51,6 +51,7 @@
         }
 
         function addBox(){
+            game.start = new Date().getTime();
             message.textContent = "Click vào box";
             box.style.display = "block";
             box.style.top = ranNum(450) + "px";
@@ -60,13 +61,13 @@
         box.addEventListener("click", () => {
             box.textContent = "";
             box.style.display = "none";
-            game.timer = setTimeout(addBox, ranNum(1000));
+            game.timer = setTimeout(addBox, ranNum(3000));
             if(!game.start ){
                message.textContent = "Loading ...."
             }else{
                 const cur = new Date().getTime();
                 const dur = (cur - game.start) / 1000;
-                message.textContent = "It took ${dur} seconds to click!";
+                message.textContent = `It took ${dur} seconds to click!`;
             }
             
         });

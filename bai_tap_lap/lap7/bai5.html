@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .checker {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return kiemTra()">
+
+        Sản phẩm:
+        <input type="text" id="sanPham">
+        <div class="checker" id="erSanPham"></div>
+        <br><br>
+
+        Loại:
+        <select id="loai">
+            <option value="">--Chọn loại--</option>
+            <option value="1">Loại 1</option>
+            <option value="2">Loại 2</option>
+        </select>
+        <div class="checker" id="erLoai"></div>
+        <br><br>
+
+        Đơn giá:
+        <input type="number" id="donGia">
+        <div class="checker" id="erDonGia"></div>
+        <br><br>
+
+        Nơi nhận hàng:
+        <input type="radio" name="diachi" value="noithanh" onclick="hienthi(false)"> Nội thành
+        <input type="radio" name="diachi" value="ngoaithanh" onclick="hienthi(true)"> Ngoại thành
+        <div class="checker" id="erDiachi"></div>
+        <div id ="phi_vc" style="display: none">Phí vận chuyển <input type="text" value="10000"></div>
+        <br><br>
+
+        <input type="submit" value="Đặt mua">
+
+    </form>
+
+    <script>
+        
+        function kiemTra() {
+            var sanPham = document.getElementById('sanPham').value;
+            var loai = document.getElementById('loai').value;
+            var donGia = document.getElementById('donGia').value;
+            var diachi = document.querySelector('input[name="diachi"]:checked');
+            if(sanPham ==""){
+                document.getElementById("erSanPham").innerHTML = "Vui lòng điền sản phẩm";
+                return false;
+            }else{
+                document.getElementById("erSanPham").innerHTML = "";
+            }
+
+            if(loai == ""){
+                document.getElementById("erLoai").innerHTML = "Vui lòng chọn loại";
+                return false;
+            }else{
+                document.getElementById("erLoai").innerHTML = "";
+            }
+
+            if(donGia == "" ){
+                document.getElementById("erDonGia").innerHTML = "Đơn giá không đươc để trống";
+                return false;
+            }else if(donGia < 0){
+                document.getElementById("erDonGia").innerHTML = "Đơn giá phải >0";
+            }else if(isNaN(donGia)){
+                document.getElementById("erDonGia").innerHTML = "Đơn giá phải là số";
+            }else{
+                document.getElementById("erDonGia").innerHTML = "";
+            }
+
+            if(diachi == null){
+                document.getElementById("erDiachi").innerHTML = "Vui lòng chọn địa chỉ nhận hàng";
+                return false;
+            }else{
+                document.getElementById("erDiachi").innerHTML = "";
+            }
+            return true;
+        }
+
+        function hienthi(visible) {
+            var phi_vc = document.getElementById("phi_vc");
+            phi_vc.style.display = visible ? "" : "none";
+        }
+    </script>
+</body>
+
+</html>

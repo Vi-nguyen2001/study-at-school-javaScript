@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+            
+        }
+        .checkerror{
+            color: red;
+        }
+        #submit{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="return kiemTra(); ">
+        <div class="checkerror" id="erfirstname"></div>
+        <input type="text"  id="firstname" placeholder="first name">
+        <div class="checkerror" id="erlastname"></div>
+        <input type="text"  id="lastname" placeholder="last name">
+        <div class="checkerror" id="erage"></div>
+        <input type="text" id="age" placeholder="age">
+        <button type="submit">submit</button>
+    </form>
+
+    <script>
+        var firstname = document.getElementById("firstname");
+        var lastname = document.getElementById("lastname");
+        var age = document.getElementById("age");
+        function kiemTra(){
+            if(firstname.value == "" || firstname.value == null){
+                document.getElementById("erfirstname").innerHTML = "first name is required";
+                return false;
+            }else{
+                document.getElementById("erfirstname").innerHTML = "";
+            }
+            if(lastname.value == "" || lastname.value == null){
+                document.getElementById("erlastname").innerHTML = "last name is required";
+                return false;
+            }else{
+                document.getElementById("erlastname").innerHTML = "";
+            }
+            if(age.value == "" || age.value == null){
+                document.getElementById("erage").innerHTML = "age is required";
+                return false;
+            }else{
+                document.getElementById("erage").innerHTML = "";
+            }
+            return true;
+        }
+
+    </script>
+</body>
+</html>

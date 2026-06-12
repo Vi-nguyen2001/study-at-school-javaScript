@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: block;
+            clear: both;
+        }
+        input{
+            float: left;
+            margin-bottom: 20px;
+        }
+        .kiemloi{
+            float: left;
+            color: red;
+            margin-left: 20px;
+            
+        }
+        #submit{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <form action="ketqua.html" onsubmit="return kiemtra();">
+        <label for="">Họ Tên</label>
+        <input id="hoten" type="text">
+        <div class="kiemloi" id="kiemloihoten"></div>
+        <label for="">Số điện thoại</label>
+        <input id="sdt" type="text">
+        <div class="kiemloi" id="kiemloisdt"></div>
+        <label for="">Email</label>
+        <input id="email" type="text">
+        <div class="kiemloi" id="kiemloiemail"></div>
+        <label for="">Tuổi</label>
+        <input id="tuoi" type="text">
+        <div class="kiemloi" id="kiemloituoi"></div>
+        <input id="submit" type="submit" value="Đăng Ký">
+    </form>
+    <script>
+        var hoten = document.getElementById('hoten');
+        var sdt = document.getElementById('sdt');
+        var kiemloisdt = document.getElementById('kiemloisdt');
+        
+        function kiemtra() {
+            if(hoten.value == '') {
+                //alert('họ tên không được để trống');
+                document.getElementById('kiemloihoten').innerHTML = 'họ tên không được để trống';
+                return false;
+            }else{
+                document.getElementById('kiemloihoten').innerHTML = '';
+              
+            }
+            if(isNaN(sdt.value) || sdt.value == '' || sdt.value.length < 9 || sdt.value.length >11){
+                kiemloisdt.innerHTML = 'Số điện thoại phải là số có độ dài từ 9 đến 11 số';
+                return false;
+            }else{
+                kiemloisdt.innerHTML = '';
+            }
+            var email = document.getElementById('email');
+            var kiemloiemail = document.getElementById('kiemloiemail');
+            var filter = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if(!filter.test(email.value)){
+                kiemloiemail.innerHTML = 'Email chưa hợp lệ';
+                return false;
+            }else{
+               kiemloiemail.innerHTML = ''; 
+            }
+            // cách 2 kiểm lỗi mail khi chỉ yêu cầu email chứa @ và dấu .
+            // if(!email.value.includes('@') || !email.value.includes('.')){
+            //     kiemloiemail.innerHTML = 'Email phải chứa @ và dấu .';
+            //     return false;
+            // }else{
+            //    kiemloiemail.innerHTML = ''; 
+            // }
+            var tuoi = document.getElementById('tuoi');
+            var kiemloituoi = document.getElementById('kiemloituoi');
+            if(isNaN(tuoi.value) || tuoi.value == ''){
+                kiemloituoi.innerHTML = 'Tuổi phải là một số';
+                return false;
+            }else{
+                kiemloituoi.innerHTML = '';
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
+

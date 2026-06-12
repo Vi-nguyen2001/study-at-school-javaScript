@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(129, 4, 129);
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toTheRight()">Go to the right</button>
+    <div id="block"></div>
+
+    <script>
+        function toTheRight(){
+            var block = document.getElementById("block");
+            var x = 0;
+            setInterval(function(){
+              if(x === 900){
+                clearInterval();
+              }else{
+                x += 10;
+                block.style.left = x + "px";
+              }
+            }, 2);
+        }
+    </script>
+</body>
+</html>
