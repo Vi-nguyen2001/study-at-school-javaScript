@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>//thêm thư viện jquery
+</head>
+<body>
+    <!-- <input type="file" multiple onchange="loadFile(this.files)"> -->
+
+    <video id="video" src="movie.mp4" width="600px" height="400px"></video>
+    <div id="control">
+        <button onclick="playVideo()">Play/Pause</button>
+        <button onclick="Replay()">Replay</button>
+        <button onclick="stopVideo()">Stop</button>
+        <button onclick="increaseVolume()">increase(+)</button>
+        <button onclick="decreaseVolume()">decrease(-)</button>
+        <button onclick="muteVolume()">Mute/onMute</button>
+
+    </div>
+    <script>
+        function loadFile(files){
+            // lấy ra tên của các file đã up lên
+            //for of
+            document.write("Tên các file: " + "<br>");
+            for(var file of files){
+                console.log(file.name);
+                document.write(file.name + "<br>");
+            }
+        }
+        var myVideo = document.getElementById("video");
+        function playVideo(){
+            if(myVideo.paused){
+                myVideo.play();//chạy video
+            }else{
+                myVideo.pause();
+            }
+        }
+        function Replay(){
+            myVideo.currentTime = 0;
+            myVideo.play();
+        }
+        function stopVideo(){
+            myVideo.pause();
+        }
+        function increaseVolume(){
+            if(myVideo.volume >= 1){
+                return;
+            }else{
+            myVideo.volume = parseFloat(myVideo.volume + 0.1).toFixed(1);
+            }
+        }
+        function decreaseVolume(){
+            if(myVideo.volume <= 0){
+                return;
+            }else{
+            myVideo.volume = parseFloat(myVideo.volume - 0.1).toFixed(1);
+            }
+        }
+        function muteVolume(){
+           if(myVideo.muted){
+               myVideo.muted = false;
+           }else{
+               myVideo.muted = true;
+           }
+        }
+
+
+
+    </script>
+</body>
+</html>

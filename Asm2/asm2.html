@@ -303,7 +303,7 @@
 
             item.addEventListener("change", function () {
 
-                let row = this.parentElement.parentElement;
+                let row = this.parentElement.parentElement;//lấy dòng tr vừa được click
 
                 let price = Number(
                     row.querySelector(".price").innerText
