@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="file" multiple onchange="loadFile(this.files)">
+    <script>
+        function loadFile(files){
+            document.write("Tổng số file: "+ "<br>");
+            for(var file of files){
+                console.log(file.name);
+                document.write(file.name + "<br>");
+            }
+
+        }
+    </script>
+</body>
+</html>

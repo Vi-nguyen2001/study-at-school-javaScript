@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="video" src="../sample-15s-360p.mp4" width="600px" height="400px"></video>
+    <div id="control">
+        <button onclick="playvideo()">play/pause</button>
+        <button onclick="replay()">replay</button>
+        <button onclick="stopVideo()">stop</button>
+        <button onclick="increaseVolume()">increase(+)</button>
+        <button onclick="decreaseVolume()">decrease(-)</button>
+        <button onclick="mute()">mute/onMute</button>
+    </div>
+
+    <script>
+        var video = document.getElementById("video");
+        function playvideo(){
+            if(video.paused){
+                video.play();
+            }else{
+                video.pause();
+            }
+        }
+
+        function replay(){
+            video.currentTime=0;
+            video.play();
+        }
+
+        function stopVideo(){
+            video.pause();
+        }
+
+        function increaseVolume(){
+            video.volume += 0.1;
+        }
+
+        function decreaseVolume(){
+            video.volume -= 0.1;
+        }
+
+        function mute(){
+            video.muted = !video.muted;
+        }
+    </script>
+</body>
+</html>

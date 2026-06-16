@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="jquery-4.0.0.min.js"></script>//thêm thư viện jquery
+    <!-- thêm thư viện jQuery -->
+    <script src="jquery-4.0.0.min.js"></script>
 </head>
 <body>
     <!-- <input type="file" multiple onchange="loadFile(this.files)"> -->
@@ -20,6 +21,7 @@
 
     </div>
     <script>
+        // thực hành file
         function loadFile(files){
             // lấy ra tên của các file đã up lên
             //for of
@@ -29,6 +31,11 @@
                 document.write(file.name + "<br>");
             }
         }
+
+
+
+
+        // thực hành video
         var myVideo = document.getElementById("video");
         function playVideo(){
             if(myVideo.paused){

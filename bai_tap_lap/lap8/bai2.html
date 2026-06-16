@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Nhấn vào đây để lấy vị trí</h2>
+    <button onclick="vitri()" id="">try it</button>
+    <p id="demo"></p>
+
+    <script>
+        var x = document.getElementById("demo");
+        function vitri(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition);
+
+            }else{
+                x.innerHTML = "Triển khai không tìm thấy";
+            }
+         }
+
+         function showPosition (position){
+            x.innerHTML = "Vĩ độ: "+position.coords.latitude +
+            "<br> Kinh độ: "+position.coords.longitude;
+         }
+    </script>
+</body>
+</body>
+</html>
